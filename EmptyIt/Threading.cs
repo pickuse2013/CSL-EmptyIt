@@ -117,6 +117,10 @@ namespace EmptyIt
                     {
                         _building = _buildingManager.m_buildings.m_buffer[i];
 
+                        if (_building.Info == null) {
+                            continue;
+                        }
+
                         _buildingAI = _building.Info.m_buildingAI;
 
                         if (_buildingAI is WarehouseAI && _buildingAI.CanBeEmptied() && SteamHelper.IsDLCOwned(SteamHelper.DLC.IndustryDLC))
